@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Conditional Independence Quiz</NAME>
+<PROPERTY>short = The conditional independence quiz is not intended to be a network used for querying, but is a graph useful for thinking about conditional independence questions.</PROPERTY>
+<PROPERTY>detailed = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Who</NAME>
+	<OUTCOME>PhD</OUTCOME>
+	<OUTCOME>Undergrads</OUTCOME>
+	<OUTCOME>Masters</OUTCOME>
+	<PROPERTY>position = (7625.89990234375, 5027.5)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>What_t</NAME>
+	<OUTCOME>Demonstration</OUTCOME>
+	<OUTCOME>Studying</OUTCOME>
+	<OUTCOME>Lab Work</OUTCOME>
+	<OUTCOME>Eating</OUTCOME>
+	<OUTCOME>Nothing</OUTCOME>
+	<PROPERTY>position = (7536.47216796875, 5273.60546875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Where_t</NAME>
+	<OUTCOME>PhD Office</OUTCOME>
+	<OUTCOME>Robot Lab</OUTCOME>
+	<OUTCOME>Common Area</OUTCOME>
+	<OUTCOME>Teaching Lab</OUTCOME>
+	<OUTCOME>LG04</OUTCOME>
+	<OBS>LG04</OBS>
+	<PROPERTY>position = (7248.16650390625, 5444.5)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Where_t+1</NAME>
+	<OUTCOME>PhD Office</OUTCOME>
+	<OUTCOME>Robot Lab</OUTCOME>
+	<OUTCOME>Common Area</OUTCOME>
+	<OUTCOME>Teaching Lab</OUTCOME>
+	<OUTCOME>LG04</OUTCOME>
+	<PROPERTY>position = (8054.83349609375, 5441.78173828125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>What_t+1</NAME>
+	<OUTCOME>Demonstration</OUTCOME>
+	<OUTCOME>Studying</OUTCOME>
+	<OUTCOME>Lab Work</OUTCOME>
+	<OUTCOME>Eating</OUTCOME>
+	<OUTCOME>Nothing</OUTCOME>
+	<PROPERTY>position = (7755.3037109375, 5276.19091796875)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Who</FOR>
+	<GIVEN>Where_t</GIVEN>
+	<GIVEN>Where_t+1</GIVEN>
+	<TABLE>1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 0.7 0.0 0.3 0.7 0.0 0.3 1.0 0.0 0.0 0.4 0.0 0.6 1.0 0.0 0.0 0.7 0.0 0.3 0.1 0.5 0.4 0.2 0.8 0.0 0.1 0.5 0.4 1.0 0.0 0.0 1.0 0.0 0.0 0.2 0.8 0.0 0.2 0.8 0.0 0.2 0.8 0.0 1.0 0.0 0.0 0.2 0.0 0.8 0.1 0.5 0.4 0.2 0.8 0.0 0.1 0.5 0.4</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>What_t</FOR>
+	<GIVEN>Who</GIVEN>
+	<GIVEN>Where_t</GIVEN>
+	<TABLE>0.0 1.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5 0.3 0.2 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.5 0.3 0.2 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.1 0.9 0.0 0.0 0.0 0.5 0.3 0.2 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.2 0.8 0.0 0.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Where_t</FOR>
+	<TABLE>0.05 0.1 0.35 0.3 0.2</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Where_t+1</FOR>
+	<GIVEN>Where_t</GIVEN>
+	<TABLE>0.0 0.25 0.25 0.25 0.25 0.2 0.0 0.3 0.2 0.3 0.1 0.2 0.0 0.3 0.4 0.1 0.1 0.5 0.0 0.3 0.1 0.2 0.4 0.3 0.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>What_t+1</FOR>
+	<GIVEN>Who</GIVEN>
+	<GIVEN>Where_t+1</GIVEN>
+	<TABLE>1.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.5 0.3 0.2 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.5 0.3 0.2 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.1 0.9 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.1 0.9 0.0 0.0 0.0 0.5 0.3 0.2 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.2 0.8 0.0 0.0</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
